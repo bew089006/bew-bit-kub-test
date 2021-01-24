@@ -35,30 +35,19 @@ class QuestionBrain1 {
           "\n";
     }
 
-    if (n % 2 != 0) {
-      int centerUp = center.round();
-      strCenter = "X" * n + "\n";
-
-      for (int i = 1; i < n; i++) {
-        if (i < centerUp) {
-          strAnswerUp += _genStrAnswer(i);
-        } else {
-          strAnswerDown += _genStrAnswer(i);
-        }
+    for (int i = 1; i < n; i++) {
+      if (i < center) {
+        strAnswerUp += _genStrAnswer(i);
+      } else if (i > center) {
+        strAnswerDown += _genStrAnswer(i);
       }
+    }
+
+    if (n % 2 != 0) {
+      strCenter = "X" * n + "\n";
       strResult = strAnswerUp + strCenter + strAnswerDown;
     } else {
-      for (int i = 1; i < n; i++) {
-        strCenter = ("X" * n + "\n") * 2;
-
-        if (i != center || i != center) {
-          if (i < center) {
-            strAnswerUp += _genStrAnswer(i);
-          } else {
-            strAnswerDown += _genStrAnswer(i);
-          }
-        }
-      }
+      strCenter = ("X" * n + "\n") * 2;
       strResult = strAnswerUp + strCenter + strAnswerDown;
     }
 
