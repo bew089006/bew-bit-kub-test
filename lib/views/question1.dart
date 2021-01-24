@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'buttomButton.dart';
-import 'question2.dart';
 import '../services/questionBrain1.dart';
 
 QuestionBrain1 quest1 = new QuestionBrain1();
