@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'question1.dart';
+import 'question1/questionOneDotOne.dart';
+import 'constants.dart';
 
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("BitKub - test"),
-      ),
-      body: Question1(),
+    return MyScaffold(
+      body: QuestionOneDotOne(),
     );
   }
 }

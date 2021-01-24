@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'buttomButton.dart';
-import '../services/questionBrain1.dart';
 
-QuestionBrain1 quest1 = new QuestionBrain1();
+class QuestionTemplate extends StatefulWidget {
+  final String exTitle;
+  final Function getAnswer;
+  final Function onPress;
 
-class Question1 extends StatefulWidget {
+  const QuestionTemplate({this.exTitle, this.getAnswer, this.onPress});
+
   @override
-  _Question1State createState() => _Question1State();
+  _QuestionTemplateState createState() => _QuestionTemplateState();
 }
 
-class _Question1State extends State<Question1> {
+class _QuestionTemplateState extends State<QuestionTemplate> {
   int n = 0;
 
   @override
@@ -22,7 +25,7 @@ class _Question1State extends State<Question1> {
             SizedBox(
               height: 10,
             ),
-            Text("Example 1.1"),
+            Text(widget.exTitle),
             SizedBox(
               height: 100,
             ),
@@ -33,7 +36,11 @@ class _Question1State extends State<Question1> {
                 onChanged: (String number) {
                   int numberToI = int.parse(number);
                   setState(() {
-                    number.length == 0 ? n = 0 : n = numberToI;
+                    if (number.length == 0) {
+                      n = 0;
+                    } else {
+                      n = numberToI;
+                    }
                   });
                 },
                 decoration: new InputDecoration(labelText: "Enter your number"),
@@ -44,20 +51,13 @@ class _Question1State extends State<Question1> {
             SizedBox(
               height: 50,
             ),
-            Text("${quest1.getAnswer1(n)}"), //TODO
+            Text("${widget.getAnswer(n)}"),
             SizedBox(
               height: 50,
             ),
             BottomButton(
               label: "next",
-              onPress: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => Question2(),
-                //   ),
-                // );
-              },
+              onPress: widget.onPress,
             )
           ],
         )
