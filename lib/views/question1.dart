@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'buttomButton.dart';
 import 'question2.dart';
-import '../services/questionBrain1.dart';
+import '../services/questionBrain.dart';
 
 QuestionBrain1 ques1 = new QuestionBrain1();
 
@@ -45,7 +45,7 @@ class _Question1State extends State<Question1> {
             SizedBox(
               height: 50,
             ),
-            Text("${ques1.getAnswer1(n)}"),
+            Text("${ques1.getAnswer2(n)}"), //TODO
             SizedBox(
               height: 50,
             ),
