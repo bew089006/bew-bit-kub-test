@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'buttomButton.dart';
 import 'question2.dart';
-import '../services/questionBrain.dart';
+import '../services/questionBrain1.dart';
 
-QuestionBrain1 ques1 = new QuestionBrain1();
+QuestionBrain1 quest1 = new QuestionBrain1();
 
 class Question1 extends StatefulWidget {
   @override
@@ -45,7 +45,7 @@ class _Question1State extends State<Question1> {
             SizedBox(
               height: 50,
             ),
-            Text("${ques1.getAnswer2(n)}"), //TODO
+            Text("${quest1.getAnswer1(n)}"), //TODO
             SizedBox(
               height: 50,
             ),
