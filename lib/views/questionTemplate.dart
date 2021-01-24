@@ -5,8 +5,13 @@ class QuestionTemplate extends StatefulWidget {
   final String exTitle;
   final Function getAnswer;
   final Function onPress;
+  final bool isFirstQuestion;
 
-  const QuestionTemplate({this.exTitle, this.getAnswer, this.onPress});
+  const QuestionTemplate(
+      {this.exTitle,
+      this.getAnswer,
+      this.onPress,
+      this.isFirstQuestion = false});
 
   @override
   _QuestionTemplateState createState() => _QuestionTemplateState();
@@ -55,9 +60,37 @@ class _QuestionTemplateState extends State<QuestionTemplate> {
             SizedBox(
               height: 50,
             ),
-            BottomButton(
-              label: "next",
-              onPress: widget.onPress,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Visibility(
+                  child: BottomButton(
+                    label: "back.",
+                    color: Colors.red,
+                    onPress: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  maintainSize: false,
+                  maintainAnimation: false,
+                  maintainState: true,
+                  visible: !widget.isFirstQuestion,
+                ),
+                Visibility(
+                  child: SizedBox(
+                    width: 50,
+                  ),
+                  maintainSize: false,
+                  maintainAnimation: false,
+                  maintainState: true,
+                  visible: !widget.isFirstQuestion,
+                ),
+                BottomButton(
+                  label: "next",
+                  color: Colors.green,
+                  onPress: widget.onPress,
+                )
+              ],
             )
           ],
         )

@@ -8,10 +8,11 @@ class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text("BitKub - test"),
-        ),
-        body: body);
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text("BitKub - test"),
+      ),
+      body: body,
+    );
   }
 }
