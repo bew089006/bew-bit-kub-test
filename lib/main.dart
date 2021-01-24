@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'showAnswerQuestion1.dart';
-
-ShowAnswerQuestion1 question1 = new ShowAnswerQuestion1();
+import 'views/mainPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,19 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("1.1\n 124545"),
-              SizedBox(
-                height: 100,
-              ),
-            ],
-          ),
+        theme: ThemeData(
+          primaryColor: Color(0xFF0A0D22),
+          scaffoldBackgroundColor: Color(0xFF0A0D22),
+          cardColor: Color(0xFF1D1F33),
         ),
-      ),
-    );
+        initialRoute: '/',
+        routes: {
+          '/': (context) => MainPage(),
+        });
   }
 }
