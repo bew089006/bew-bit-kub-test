@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'buttomButton.dart';
+import '../services/questionBrain1.dart';
+import 'dart:ui';
 
 class QuestionTemplate extends StatefulWidget {
   final String exTitle;
   final Function getAnswer;
   final Function onPress;
   final bool isFirstQuestion;
+  final QuestionBrain1 quest1;
 
   const QuestionTemplate(
       {this.exTitle,
+      this.quest1,
       this.getAnswer,
       this.onPress,
       this.isFirstQuestion = false});
@@ -56,7 +60,12 @@ class _QuestionTemplateState extends State<QuestionTemplate> {
             SizedBox(
               height: 50,
             ),
-            Text("${widget.getAnswer(n)}"),
+            Text(
+              "${widget.getAnswer(n)}",
+              style: TextStyle(
+                letterSpacing: 3.5,
+              ),
+            ),
             SizedBox(
               height: 50,
             ),

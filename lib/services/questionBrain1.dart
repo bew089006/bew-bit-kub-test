@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class QuestionBrain1 {
   String getAnswer1(int n) {
     String strAnswerUp = "";
@@ -30,7 +32,7 @@ class QuestionBrain1 {
       print(voidLength);
 
       return ("X" * ((n - voidLength) / 2).round()) +
-          ("O" * (n - (2 * i)).abs()) +
+          ("  " * (n - (2 * i)).abs()) +
           ("X" * ((n - voidLength) / 2).round()) +
           "\n";
     }

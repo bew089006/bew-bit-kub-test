@@ -17,6 +17,7 @@ class _QuestionOneDotOneState extends State<QuestionOneDotOne> {
       exTitle: "Example 1.1",
       getAnswer: quest1.getAnswer1,
       isFirstQuestion: true,
+      quest1: quest1,
       onPress: () {
         Navigator.push(
           context,
