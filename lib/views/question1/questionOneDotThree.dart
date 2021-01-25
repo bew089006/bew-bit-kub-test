@@ -17,7 +17,7 @@ class _QuestionOneDotThreeState extends State<QuestionOneDotThree> {
     return MyScaffold(
       body: QuestionTemplate(
         exTitle: "Example 1.3",
-        getAnswer: quest1.getAnswer2,
+        getAnswer: quest1.getAnswer3,
         onPress: () {
           Navigator.push(
             context,

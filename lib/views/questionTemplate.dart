@@ -60,11 +60,17 @@ class _QuestionTemplateState extends State<QuestionTemplate> {
             SizedBox(
               height: 50,
             ),
-            Text(
-              "${widget.getAnswer(n)}",
-              style: TextStyle(
-                letterSpacing: 3.5,
-              ),
+            Wrap(
+              spacing: 30,
+              runSpacing: 30,
+              children: [
+                Text(
+                  "${widget.getAnswer(n)}",
+                  style: TextStyle(
+                    letterSpacing: 3.5,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 50,

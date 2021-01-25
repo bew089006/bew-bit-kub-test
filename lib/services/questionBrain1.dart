@@ -55,4 +55,39 @@ class QuestionBrain1 {
 
     return strResult;
   }
+
+  String getAnswer3(int n) {
+    String strResult = "";
+    double center = n / 2;
+    int centerUp = center.round();
+
+    for (int i = 1; i <= n; i++) {
+      if (n / 2 > 1) {
+        if (i == 2) {
+          strResult += ("Y" * (n - 1)) + "X" + "\n";
+        } else if (i == centerUp) {
+          if (n >= 7) {
+            strResult += "X" + ("Y" * (n - 4)) + "X" + "Y" + "X" + "\n";
+          } else {
+            strResult += ("X" * (n - 2)) + "Y" + "X" + "\n";
+          }
+        } else if (i == n - 1) {
+          if (n > 4) {
+            strResult += "X" + ("Y" * (n - 2)) + "X" + "\n";
+          } else {
+            strResult += ("X" * (n - 2)) + "Y" + "X" + "\n";
+          }
+        } else if (i > centerUp && i < n - 1) {
+          strResult += "X" + "Y" + ("X" * (n - 4)) + "Y" + "X" + "\n";
+        } else if (i > 2 && i < centerUp) {
+          strResult += ("X" * (n - 2)) + "Y" + "X" + "\n";
+        } else {
+          strResult += ("X" * n) + "\n";
+        }
+      } else {
+        strResult += ("X" * n) + "\n";
+      }
+    }
+    return strResult;
+  }
 }
