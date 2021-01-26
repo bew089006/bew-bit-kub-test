@@ -46,25 +46,25 @@ class _QuestionThreeState extends State<QuestionThree> {
                 children: [
                   for (var data in responseData)
                     Expanded(
-                      child: Expanded(
-                        flex: 1,
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("id: ${data["id"]}"),
-                                Text("name: ${data["name"]}"),
-                                Text("username: ${data["username"]}"),
-                                Text("email: ${data["email"]}"),
-                                Text("phone: ${data["phone"]}"),
-                                Text("website: ${data["website"]}"),
-                                Text("company: ${data["company"]["name"]}"),
-                                Text("address: ${data["address"]["street"]} ${data["address"]["suite"]} \n" +
-                                    "${data["address"]["city"]} ${data["address"]["zipcode"]}"),
-                              ],
-                            ),
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("id: ${data["id"]}"),
+                              Text("name: ${data["name"]}"),
+                              Text("username: ${data["username"]}"),
+                              Text("email: ${data["email"]}"),
+                              Text("phone: ${data["phone"]}"),
+                              Text("address: ${data["address"]["street"]} ${data["address"]["suite"]} \n" +
+                                  "${data["address"]["city"]} ${data["address"]["zipcode"]}"),
+                              Text("website: ${data["website"]}"),
+                              Text("company name: ${data["company"]["name"]}"),
+                              Text(
+                                  "company catchPhrase: ${data["company"]["catchPhrase"]}"),
+                              Text("company bs: ${data["company"]["bs"]}"),
+                            ],
                           ),
                         ),
                       ),
